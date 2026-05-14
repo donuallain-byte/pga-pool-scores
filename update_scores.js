@@ -46,7 +46,7 @@ const total = p.total === '-' ? 'E' : (p.total ?? 'E');
     return {
       golfer: p.player?.displayName,
       position: posNum,
-      made_cut: p.total === 'E' || p.total?.startsWith('-') || (p.total?.startsWith('+') && parseInt(p.total) <= 6),
+      made_cut: p.total === 'E' || p.total?.startsWith('-') || (p.total?.startsWith('+') && parseInt(p.total) <= 10),
       total: p.total ?? 'E',
     };
   }).filter(r => r.golfer);
