@@ -39,9 +39,7 @@ async function updateScores() {
 
   const rows = players.map(p => {
     const posStr = p.position ?? '';
-    const posNum = p.playerState === 'ACTIVE' 
-  ? (p.leaderboardSortOrder + 1) 
-  : (parseInt(posStr.replace('T', '')) || (p.leaderboardSortOrder + 1));
+    const posNum = parseInt(posStr.replace('T', '')) || (p.leaderboardSortOrder + 1);
 const total = p.total === '-' ? 'E' : (p.total ?? 'E');
     return {
       golfer: p.player?.displayName,
