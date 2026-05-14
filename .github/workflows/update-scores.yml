@@ -19,4 +19,4 @@ jobs:
           node-version: '22'
 
       - name: Run score update
-        run: node $GITHUB_WORKSPACE/update_scores.js
+        run: node update_scores.js
