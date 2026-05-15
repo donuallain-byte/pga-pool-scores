@@ -1,22 +1,21 @@
 name: Update Golf Scores
 
 on:
+  repository_dispatch:
+    types: [update-scores]
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   update-scores:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
       - name: Run score update
         run: node update_scores.js
