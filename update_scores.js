@@ -1,6 +1,6 @@
 const SUPABASE_URL = 'https://gahuzlqdykisexnyoqyo.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdhaHV6bHFkeWtpc2V4bnlvcXlvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTQ2ODQyNiwiZXhwIjoyMDkxMDQ0NDI2fQ.oTtUb0SnEM241Ack5FBymSHukEva0SaVA2m7POHRv2Q';
-const TOURNAMENT_ID = 'R2026033'; // PGA Championship 2026
+const TOURNAMENT_ID = 'R2026026'; // US Open 2026
 
 async function updateScores() {
   const res = await fetch('https://orchestrator.pgatour.com/graphql', {
