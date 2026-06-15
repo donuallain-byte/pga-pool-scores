@@ -40,12 +40,13 @@ async function updateScores() {
   const rows = players.map(p => {
     const posStr = p.position ?? '';
     const posNum = parseInt(posStr.replace('T', '')) || (p.leaderboardSortOrder + 1);
-const total = p.total === '-' ? 'E' : (p.total ?? 'E');
+    const total = p.total === '-' ? 'E' : (p.total ?? 'E');
+    const madeCut = total === 'E' || total.startsWith('-') || (total.startsWith('+') && parseInt(total) <= 10);
     return {
       golfer: p.player?.displayName,
       position: posNum,
-      const madeCut = total === 'E' || total.startsWith('-') || (total.startsWith('+') && parseInt(total) <= 10);
-      total: p.total ?? 'E',
+      made_cut: madeCut,
+      total: total,
     };
   }).filter(r => r.golfer);
 
