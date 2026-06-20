@@ -42,9 +42,9 @@ async function updateScores() {
     const posNum = parseInt(posStr.replace('T', '')) || (p.leaderboardSortOrder + 1);
     const total = p.total === '-' ? 'E' : (p.total ?? 'E');
     console.log(`${p.player?.displayName}: playerState=${p.playerState}`);
-    const madeCut = p.playerState !== 'WD' && 
+   const madeCut = p.playerState !== 'WD' && 
                 p.playerState !== 'DQ' &&
-                !(total.startsWith('+') && parseInt(total) > 5 && posNum > 75);
+                !(total.startsWith('+') && parseInt(total) >= 5 && posNum > 70);
     return {
       golfer: p.player?.displayName,
       position: posNum,
