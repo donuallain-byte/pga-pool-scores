@@ -41,6 +41,7 @@ async function updateScores() {
     const posStr = p.position ?? '';
     const posNum = parseInt(posStr.replace('T', '')) || (p.leaderboardSortOrder + 1);
     const total = p.total === '-' ? 'E' : (p.total ?? 'E');
+    console.log(`${p.player?.displayName}: playerState=${p.playerState}`);
     const madeCut = p.playerState !== 'CUT' && p.playerState !== 'WD' && p.playerState !== 'DQ';
     return {
       golfer: p.player?.displayName,
