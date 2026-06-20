@@ -44,7 +44,7 @@ async function updateScores() {
     console.log(`${p.player?.displayName}: playerState=${p.playerState}`);
     const madeCut = p.playerState !== 'WD' && 
                 p.playerState !== 'DQ' &&
-                !(total.startsWith('+') && parseInt(total) > 5 && posNum > 70);
+                !(total.startsWith('+') && parseInt(total) > 5 && posNum > 75);
     return {
       golfer: p.player?.displayName,
       position: posNum,
